@@ -3,11 +3,15 @@ package one.digitalinnovation.projects.mathsphysis.citiesapidio.cities.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import one.digitalinnovation.projects.mathsphysis.citiesapidio.utils.geolocation.PointType;
+import org.hibernate.annotations.Type;
 import org.hibernate.annotations.TypeDef;
 import org.hibernate.annotations.TypeDefs;
+import org.springframework.data.geo.Point;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -15,11 +19,12 @@ import javax.persistence.Table;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-//@TypeDefs({
-//        @TypeDef(name = "point", typeClass = PointType.class)
-//})
+@TypeDefs({
+        @TypeDef(name = "point", typeClass = PointType.class)
+})
 public class City {
 
+    @Id
     private Long id;
 
     @Column(name = "nome")
@@ -29,8 +34,9 @@ public class City {
 
     private Integer ibge;
 
-//    @Column(name = "lat_lon")
-//    private Point latLon;
+    @Type(type = "point")
+    @Column(name = "lat_lon")
+    private Point geolocation;
 
     private Double latitude;
 
