@@ -18,7 +18,7 @@ public class CountryService {
 
     private final CountryRepository countryRepository;
 
-    public Page<Country> countries(Pageable page) {
+    public Page<Country> listAll(Pageable page) {
         return countryRepository.findAll(page);
     }
 
