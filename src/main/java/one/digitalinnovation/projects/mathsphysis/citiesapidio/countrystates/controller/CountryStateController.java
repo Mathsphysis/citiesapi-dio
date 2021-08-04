@@ -20,7 +20,7 @@ public class CountryStateController {
     CountryStateService countryStateService;
 
     @GetMapping
-    public Page<CountryState> countryStates(Pageable page) {
+    public Page<CountryState> listCountryStates(Pageable page) {
         return countryStateService.listAll(page);
     }
 }

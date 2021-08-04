@@ -23,7 +23,7 @@ import java.util.List;
 public class CountryState {
 
     @Id
-    private Integer id;
+    private Long id;
 
     @Column(name = "nome")
     private String name;

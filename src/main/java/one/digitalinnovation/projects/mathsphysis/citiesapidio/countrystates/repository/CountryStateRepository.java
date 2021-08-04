@@ -4,5 +4,5 @@ package one.digitalinnovation.projects.mathsphysis.citiesapidio.countrystates.re
 import one.digitalinnovation.projects.mathsphysis.citiesapidio.countrystates.entity.CountryState;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface CountryStateRepository extends JpaRepository<CountryState, Integer> {
+public interface CountryStateRepository extends JpaRepository<CountryState, Long> {
 }

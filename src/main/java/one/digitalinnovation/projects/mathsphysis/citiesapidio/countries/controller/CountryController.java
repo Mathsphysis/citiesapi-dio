@@ -12,8 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
 @RestController
 @RequestMapping("/countries")
 @AllArgsConstructor(onConstructor = @__(@Autowired))
@@ -23,7 +21,7 @@ public class CountryController {
 
     @GetMapping
     public Page<Country> listCountries(Pageable page) {
-        return countryService.countries(page);
+        return countryService.listAll(page);
     }
 
     @GetMapping("/{id}")
