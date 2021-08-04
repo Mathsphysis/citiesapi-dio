@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class CountryStateController {
 
-    CountryStateService countryStateService;
+    private final CountryStateService countryStateService;
 
     @GetMapping
     public Page<CountryState> listCountryStates(Pageable page) {

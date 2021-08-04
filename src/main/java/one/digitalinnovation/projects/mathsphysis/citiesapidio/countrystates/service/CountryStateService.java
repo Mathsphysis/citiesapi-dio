@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class CountryStateService {
 
-    private CountryStateRepository countryStateRepository;
+    private final CountryStateRepository countryStateRepository;
 
     public Page<CountryState> listAll(Pageable page) {
         return countryStateRepository.findAll(page);

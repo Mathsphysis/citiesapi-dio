@@ -13,11 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/cities")
-@NoArgsConstructor
 @AllArgsConstructor(onConstructor = @__(@Autowired))
 public class CityController {
 
-    private CityService cityService;
+    private final CityService cityService;
 
     @GetMapping
     public Page<City> listCities(Pageable page) {
